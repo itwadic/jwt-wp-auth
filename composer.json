@@ -1,5 +1,5 @@
 {
-    "name": "developwithwp/jwt-wp-auth",
+    "name": "itwadic/jwt-wp-auth",
     "description": "PHP Library which adds JWT Support and Authorization Route to WP REST API.",
     "type": "wordpress-plugin",
     "keywords": [],
