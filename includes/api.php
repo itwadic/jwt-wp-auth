@@ -87,7 +87,7 @@ function authorize_user( $request ) {
 	}
 
 	$jwt       = JWT\create( $user );
-	$user_data = get_default_user_data( $user );
+	$user_data = get_default_user_data( $user ); 
 
 	$payload = array_merge( $user_data, $jwt );
 
@@ -702,5 +702,10 @@ function get_default_user_data( $user ) {
 		'user_nicename' => $user->data->user_nicename,
 		'user_email'    => $user->data->user_email,
 		'roles'         => $user->roles,
+                'special_users' => (get_user_meta($user->ID, 'special_users', true) === 'yes')?true:false,
+                'order_access'  => (get_user_meta($user->ID, 'order_access', true) === 'yes')?true:false,
+                'quote_access'  => (get_user_meta($user->ID, 'quote_access', true) === 'yes')?true:false,
+                'archive_access' => (get_user_meta($user->ID, 'archive_access', true) === 'yes')?true:false,
+                'data_entry_access' => (get_user_meta($user->ID, 'data_entry_access', true) === 'yes')?true:false
 	];
 }
