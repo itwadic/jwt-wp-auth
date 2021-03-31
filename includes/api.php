@@ -703,6 +703,7 @@ function get_default_user_data( $user ) {
 		'user_email'    => $user->data->user_email,
 		'roles'         => $user->roles,
                 'special_users' => (get_user_meta($user->ID, 'special_users', true) === 'yes')?true:false,
+                'sales_access'  => (get_user_meta($user->ID, 'sales_access', true) === 'yes')?true:false,
                 'order_access'  => (get_user_meta($user->ID, 'order_access', true) === 'yes')?true:false,
                 'quote_access'  => (get_user_meta($user->ID, 'quote_access', true) === 'yes')?true:false,
                 'archive_access' => (get_user_meta($user->ID, 'archive_access', true) === 'yes')?true:false,
